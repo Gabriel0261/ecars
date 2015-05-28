@@ -4,9 +4,6 @@ include ("function.php");
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<!-- Facebook APP ID -->
-	<meta property="fb:app_id" content="12345" />
-
 	<meta name="keywords" content="eCars" />
 	<meta name="description" content="eCars" />
 
