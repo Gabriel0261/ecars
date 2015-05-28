@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script Language="JavaScript">
+  function validateR()
+        {
+  var selectedCombobox=(combo.brand.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati marca!");
+  return false;
+  }
+  var selectedCombobox=(combo.btype.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati caroseria!");
+  return false;
+  }
+             var selectedCombobox=(combo.door.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati nr. usi!");
+  return false;
+  }
+   var selectedCombobox=(combo.color.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati culoarea!");
+  return false;
+  }
+  var selectedCombobox=(combo.ftype.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati combustibilul!");
+  return false;
+  }
+  var selectedCombobox=(combo.trans.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati transmisia!");
+  return false;
+  } 
+  var selectedCombobox=(combo.tarao.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati tara de origine!");
+  return false;
+  }
+  var selectedCombobox=(combo.tainma.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati tara inmatricularii!");
+  return false;
+  }        
+  var selectedCombobox=(combo.starte.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati starea tehnica!");
+  return false;
+  } 
+  var selectedCombobox=(combo.eurot.value);
+            
+  if (selectedCombobox=="-1") {
+  alert("Va rugam selectati norma euro!");
+  return false;
+  } 
+            {
+  var x = document.getElementById("luna").max = "2015-12";
+      
+    document.getElementById("demo").innerHTML = "The value of the max attribute was changed from '1900-01' to '2015-12'.";
+  }
+              }
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+</script>
+    <script type="text/javascript">
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var myForm = document.getElementById("login");
+    var checkForm = function(e) {
+      ...
+      if(!this.terms.checked) {
+        alert("Please indicate that you accept the Terms and Conditions");
+        this.terms.focus();
+        e.preventDefault(); // equivalent to return false
+        return;
+      }
+    };
+
+    // attach the form submit handler
+    myForm.addEventListener("submit", checkForm, true);
+
+    var myCheckbox = document.getElementById("field_terms");
+    var myCheckboxMsg = "Please indicate that you accept the Terms and Conditions";
+
+    // set the starting error message
+    myCheckbox.setCustomValidity(myCheckboxMsg);
+
+    // attach checkbox handler to toggle error message
+    myCheckbox.addEventListener("change", function() {
+      this.setCustomValidity(this.validity.valueMissing ? myCheckboxMsg : "");
+    }, false);
+
+  }, false);
+
+</script>
+
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="eCars" />
+	<meta property="og:title" content="Acasa" />
+	<meta property="og:description" content="eCars" />
+
+    <!-- Page Title -->
+	<title>eCars:Vanzari auto</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--[if IE]>
+	<link href="css/style_ie.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="js/jquery.selectik.js"></script>
+    <script type="text/javascript" src="js/jquery.checkbox.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class="sell">
+	<!--BEGIN HEADER-->
+		<div id="header">
+			<div class="top_info">
+				<div class="logo">
+					<a href="index.php">e<span>Cars.ro</span></a>
+				</div>
+				<div class="header_contacts">
+					<div class="phone">www.eCars</div>
+                    <div><strong>Vanzari masini noi si second hand!</strong></div>
+				</div>
+			</div>
+			<div class="bg_navigation">
+				<div class="navigation_wrapper">
+					<div id="navigation">
+						<span>Acasa</span>
+						<ul>
+							<li><a href="index.php">Acasa</a></li>
+				            <li class="current"><a href="add.html">Vinde</a></li>
+							<li><a href="#">Stiri</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+					<div id="search_form">
+						<form method="get" action="search.php" />
+							<input type="text" onblur="if(this.value=='') this.value='Cautare';" onfocus="if(this.value=='Cautare') this.value='';" value="Cautare" class="txb_search" name="query" />
+							<input type="submit" value="Search" class="btn_search" />
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--EOF HEADER-->
+	<!--BEGIN CONTENT-->
+		<div id="content">
+			<div class="content">
+				<div class="breadcrumbs">
+					<a href="index.php">Acasa</a>
+					<img src="images/marker_2.gif" alt="" />
+					<span>Adauga anunt</span>
+				</div>
+				<h1><strong>Vinde</strong> un autoturism</h1>
+					<form id="login" name="combo" action="process.php" method="post" enctype="multipart/form-data">
+					<div class="sell_box sell_box_1">
+						<h2><strong>Datele</strong> vehiculului</h2>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Marca:</strong></label>
+							<select class="select_5" name="brand">
+                                <option value="-1">Select</option>
+     							<option value="Audi" />Audi
+								<option value="Bmw" />BMW
+								<option value="Citroen" />Citroen
+								<option value="Dacia" />Dacia
+								<option value="Ford" />Ford
+								<option value="Jaguar" />Jaguar
+								<option value="Fiat" />Fiat
+								<option value="Dodge" />Dodge
+                                <option value="Mercedes" />Mercedes
+								<option value="Renault" />Renault
+								<option value="Volvo" />Volvo
+								<option value="Opel" />Opel
+								<option value="Volkswagen" />Volkswagen
+                                <option value="Land Rover" />Land Rover
+								<option value="Subaru" />Subaru
+                                <option value="Other" />Altul
+                                </select>
+                            <span id='roastError' style='color:red'></span>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Model </strong></label>
+							<input type="text" maxlength="10" class="txb" value="" name="model"  required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Anul fabricatiei </strong></label>
+							<input type="number" class="txb" value="" name="fab" required/>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Caroserie: :</strong></label>
+							<select class="select_5" name="btype" required>
+                                <option value="-1">Select</option>
+								<option value="berlina" />Berlina
+								<option value="break" />Break
+								<option value="suv" />SUV
+								<option value="hatback" />Hatchback
+								<option value="pickup" />Pick-up
+                                <option value="cabrio" />Cabrio
+                                <option value="van" />VAN
+							</select>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Combustibil:</strong></label>
+							<select class="select_5" name="ftype">
+                                <option value="-1">Select</option>
+                                <option value="electric" />Electrica
+								<option value="benzina" />Hibrid
+                                <option value="benzina" />Benzina
+								<option value="benzgpl" />Benz+GPL
+								<option value="diesel" />Diesel
+							</select>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Transmsie</strong></label>
+							<select class="select_5" name="trans">
+								<option value="-1">Select</option>
+								<option value="1" />Auto
+								<option value="2" />Manuala
+							</select>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Nr. Usi:</strong></label>
+							<select class="select_5" name="door" required>
+								<option value="-1">Select</option>
+								<option value="2" />2
+								<option value="3" />3
+								<option value="4" />4
+								<option value="5" />5
+							</select>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Cilindrii </strong> in cm3!</label>
+							<input type="number" class="txb" value="" name="cili" required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Putere: </strong> (CP)!</label>
+							<input type="number" class="txb" value="" name="hp" required/>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Culoare:</strong></label>
+							<select class="select_5" name="color">
+								<option value="-1">Select</option>
+								<option value="red" />Rosu
+								<option value="green" />Verde
+								<option value="blue" />Albastru
+								<option value="grey" />Gri
+								<option value="white" />Alb
+								<option value="black" />Negru
+							</select>
+						</div>
+                        <div class="input_wrapper">
+							<label><span>* </span><strong>VIN / serie sasiu:</strong></label>
+							<input type="text" class="txb large" value="" name="vin" required/>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_2">
+                            <h2><strong>Dotari</strong></font></h2>
+						<div class="chb_group">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="abs"/>
+								</span>
+								<label>ABS</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="trapa"/>
+								</span>
+								<label>Trapa</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="alarm"/>
+								</span>
+								<label>Alarma</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="wcom"/>
+								</span>
+								<label>Comenzi volan</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+                                    <input type="checkbox" value="1" name="gele"/>
+								</span>
+								<label>Geamuri electrice</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="jali"/>
+								</span>
+								<label>Jante aliaj</label>
+							</span>
+						</div>
+						<div class="chb_group">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="eds"/>
+								</span>
+								<label>EDS</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="radiocd"/>
+								</span>
+								<label>Radio/CD</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="gps"/>
+								</span>
+								<label>Sistem navigatie</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="cbord"/>
+								</span>
+								<label>Computer bord</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="oele"/>
+								</span>
+								<label>Oglizi electrice</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="sinc"/>
+								</span>
+								<label>Scaune incalzite</label>
+							</span>
+						</div>
+						<div class="chb_group">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="esp"/>
+								</span>
+								<label>ESP</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="xenon"/>
+								</span>
+								<label>Xenon</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="ctrlt"/>
+								</span>
+								<label>Controlul tractiunii</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="iaux"/>
+								</span>
+								<label>Incalzire auxiliara</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="pinc"/>
+								</span>
+								<label>Parbriz incalzit</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="spark"/>
+								</span>
+								<label>Senzori parcare</label>
+							</span>
+						</div>
+						<div class="chb_devider"></div>
+						<div class="chb_group">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="tpiel"/>
+								</span>
+								<label>Tapiserie piele</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="ac"/>
+								</span>
+								<label>Aer conditionat</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="icen"/>
+								</span>
+								<label>Inchidere centralizata</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="pilota"/>
+								</span>
+								<label>Pilot automat</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="carli"/>
+								</span>
+								<label>Carlig remorcare</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="gcolo"/>
+								</span>
+								<label>Geamuri colorate</label>
+							</span>
+						</div>
+						<div class="chb_group">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="airb"/>
+								</span>
+								<label>Airbag</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="pceata"/>
+								</span>
+								<label>Proiectoate ceata</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+								     <input type="checkbox" value="1" name="serv"/>
+								</span>
+								<label>Servo directie</label>
+							</span>
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="pwd"/>
+								</span>
+								<label>4x4</label>
+							</span>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_1">
+						<h2><strong>Informatii</strong> despre starea generala a vehiculului</h2>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Tara de origine:</strong></label>
+							<select class="select_5" name="tarao">
+                                <option value="-1">Selectati</option>
+     							<option value="ro" />Romania
+								<option value="d" />Germania
+								<option value="uk" />Marea Britanie
+								<option value="s" />Suedia
+								<option value="f" />Franta
+								<option value="i" />Italia
+								<option value="ung" />Ungaria
+								<option value="ceh" />Cehia
+                                <option value="bg" />Bulgaria
+								<option value="sua" />SUA
+								<option value="rus" />Rusia
+								<option value="e" />Spania
+                                <option value="oth" />Alta
+                                </select>
+						</div>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Tara inmatricularii: </strong></label>
+							<select class="select_5" name="tainma">
+								<option value="-1" />Select
+								<option value="rom" />Romania
+								<option value="nein" />Neinmatriculat
+								<option value="alta" />Alta tara
+								</select>
+						</div>
+                        <div class="input_wrapper">
+							<label><span>* </span><strong>Anul fabricatiei </strong></label>
+							<input type="month" id="luna" class="txb" name="dinma" min="1900-04" max="2016-01" required/>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_1">
+						<h2><strong>Starea</strong> vehiculului</h2>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Starea tehnica:</strong></label>
+							<select class="select_5" name="starte">
+								<option value="-1" />Selectati
+								<option value="ava" />Avariat
+								<option value="fol" />Folosit
+                                <option value="new"/>Nou
+							</select>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Rulaj: </strong></label>
+							<input type="number" class="txb" value="" name="rulj" required/>
+						</div>
+						<div class="select_wrapper">
+							<label><strong>Norma euro:</strong></label>
+							<select class="select_5" name="eurot">
+								<option value="-1" />Selectati
+								<option value="no" />non euro
+								<option value="1" />Euro 1
+								<option value="2" />Euro 2
+                                <option value="3" />Euro 3
+								<option value="4" />Euro 4
+								<option value="5" />Euro 5
+                                <option value="6" />Euro 6
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_3">
+						<h2><strong>Detalii</strong> pret</h2>
+						<div class="select_wrapper">
+							<label><span>* </span><strong>Pret (euro): </strong></label>
+							<input type="number" name="price" class="txb" required/>
+						</div>
+						<div class="single_chb_wrapper">
+							<span class="custom_chb_wrapper">
+								<span class="custom_chb">
+									<input type="checkbox" value="1" name="pnego" />
+								</span>
+								<label>Pret Negociabil</label>
+							</span>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_4">
+						<h2><strong>Poza</strong></h2>
+						<div class="foto_wrapper last">
+								<img src="" id="prew" alt="your image" width="200"/>
+                            <input type="file" name="image" 
+                            onchange="$('#prew')[0].src = window.URL.createObjectURL(this.files[0])">
+							</a>
+                       </div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_box sell_box_5">
+						<h2><strong>Detalii</strong> vanzator</h2>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Nume: </strong></label>
+							<input type="text" class="txb" name="username" value="" required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Nr. Telefon: </strong></label>
+							<input type="number" class="txb" name="phone" value="" required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Oras:</strong></label>
+							<input type="text" class="txb" name="cityusr" value="" required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>E-mail: </strong></label>
+							<input type="email" class="txb" name="email" value="" required/>
+						</div>
+						<div class="input_wrapper">
+							<label><span>* </span><strong>Parola:</strong></label>
+							<input type="password" class="txb" name="passw" value="" required/>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="sell_submit_wrapper">
+						<span class="custom_chb_wrapper fL">
+							<span class="custom_chb">
+                                <input id="field_terms" type="checkbox" required name="terms">
+							</span>
+                            <label>I agree to the <a href="#">Terms and Conditions</a></label>
+						</span>
+                         <input type="submit"  name="btn" class="myButton"  class="sell_submit" value="Salveaza" onclick="return validateR();"/>
+						</div>
+                <div class="clear"></div>
+                                </form>
+				</div>
+			</div>
+		</div>
+	<!--EOF CONTENT-->
+	<!--BEGIN FOOTER-->
+		<div id="footer">
+			<div class="bg_top_footer">
+				<div class="top_footer">
+					<div class="f_widget first">
+						<a href
+					<div class="fwidget_separator"></div>
+				</div>
+			</div>
+			<div class="bottom_footer">
+				<div class="f_widget ">
+					<h3><strong>Despre</strong> noi</h3>
+					<ul>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Parteneri</a></li>
+						<li><a href="#">Publicitate</a></li>
+						<li><a href="#">Harta site</a></li>
+					</ul>
+				</div>
+				<div class="f_widget divide">
+					<h3><strong>Ajutor</strong></h3>
+					<ul>
+						<li><a href="#">Cum adaug un anunt?</a></li>
+						<li><a href="#">Cum gasesc o masina?</a></li>
+						<li><a href="#">Lista preturi</a></li>
+					</ul>
+				</div>
+				<div class="fwidget_separator"></div>
+				<div class="f_widget">
+					<h3><strong>User</strong> area</h3>
+					<ul>
+						<li><a href="add.html">Adauga anunt</a></li>
+						<li><a href="#">Termeni si conditii</a></li>
+						<li><a href="#">Stiri</a></li>
+					</ul>
+				</div>
+				<div class="f_widget divide last">
+					<h3>Ne gasesti si <strong>aici</strong>!</h3>
+					<ul class="horizontal">
+						<li><a href="#"><img src="images/fb_icon.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="copyright_wrapper">
+				<div class="copyright">&copy; 2015 eCars. All Rights Reserved.</div>
+			</div>
+		</div>
+	<!--EOF FOOTER-->
+</body>
+</html>
